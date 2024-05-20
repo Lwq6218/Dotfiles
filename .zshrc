@@ -118,4 +118,4 @@ alias sudo='nocorrect sudo -E '
 alias vim='nvim'
 alias ls='lsd -a --group-directories-first'
 alias ll='lsd -la --group-directories-first'
-alias y=yazi
+alias y='yazi'
