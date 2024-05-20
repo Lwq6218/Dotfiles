@@ -58,16 +58,12 @@
 /* Each module */
 #battery,
 #cpu,
-#custom-keyboard-layout,
 #memory,
-#mode,
 #network,
 #pulseaudio,
 #temperature,
 #custom-notification,
-/* #disk, */
-#keyboard-state,
-#custom-fcitx5,
+#battery
 #submap,
 #custom-icon,
 #bluetooth {
@@ -82,7 +78,10 @@
 /* -----------------------------------------------------------------------------
  * Module styles
  * -------------------------------------------------------------------------- */
-
+#custom-notification{
+  color: @base;
+  background-color: @sapphire;
+}
 #battery {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
@@ -151,14 +150,10 @@
   background-color: @red;
 }
 
-#mode {
-  color: @red;
-  border-top: 2px solid white;
-  padding-bottom: 2px;
-}
 
 #network {
-  color: @yellow;
+  color: @base;
+  background-color: @yellow;
 }
 
 #network.disconnected {
@@ -193,10 +188,18 @@
   color: @green;
 }
 
-/* #disk { */
-/*   color: @sapphire; */
-/* } */
+#battery {
+  color: @base;
+  background-color: @green;
+}
 
+#battery.warning {
+  background-color: @pink;
+}
+
+#battery.critical {
+  background-color: @red;
+}
 #tray {
   margin: 5px;
   padding-left: 10px;
@@ -213,7 +216,6 @@
   /* border-top: 2px solid transparent; */
   border-radius: 0.5rem;
   margin: 5px;
-
   padding-bottom: 2px;
   padding-left: 10px;
   padding-right: 10px;

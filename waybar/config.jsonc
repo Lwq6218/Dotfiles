@@ -14,23 +14,19 @@
   // If height property would be not present, it'd be calculated dynamically
   "height": 31,
   "modules-left": [
-    // "custom/icon",
     "hyprland/submap",
     "hyprland/workspaces",
   ],
   "modules-center": [
     "clock#date",
-    "clock#time"
+    "clock#time",
   ],
   "modules-right": [
     "tray",
     "bluetooth",
     "pulseaudio",
-    "cpu",
-    "temperature",
-    "memory",
-    // "disk",
     "network",
+    "battery",
     "custom/notification",
   ],
   // -------------------------------------------------------------------------
@@ -153,12 +149,6 @@
     "tooltip-format": "{ifname}: {ipaddr}",
     // "on-click": "nm-connection-",
   },
-  // "disk": {
-  //   "interval": 30,
-  //   "format": " {free}",
-  //   "path": "/",
-  //   "tooltip-format": "{used} / {total}",
-  // },
   "tray": {
     "icon-size": 21,
     "spacing": 10,
@@ -202,4 +192,21 @@
     "format": " {}",
     "tooltip": false,
   },
+  "battery": {
+    "bat": "BAT0",
+    "interval": 60,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{capacity}% {icon}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "max-length": 25
+  }
 }
