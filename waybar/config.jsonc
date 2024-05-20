@@ -14,12 +14,12 @@
   // If height property would be not present, it'd be calculated dynamically
   "height": 31,
   "modules-left": [
-    "hyprland/submap",
-    "hyprland/workspaces",
+    "custom/arch",
+    "hyprland/workspaces"
   ],
   "modules-center": [
     "clock#date",
-    "clock#time",
+    "clock#time"
   ],
   "modules-right": [
     "tray",
@@ -27,11 +27,15 @@
     "pulseaudio",
     "network",
     "battery",
-    "custom/notification",
+    "custom/notification"
   ],
   // -------------------------------------------------------------------------
   // Modules
   // -------------------------------------------------------------------------
+  "custom/arch": {
+    "format": "  ",
+    "on-click": "hyprpicker | wl-copy"
+  },
   "clock#date": {
     "interval": 10,
     "format": "{:%a %b %e %Y}", // Icon: calendar-alt
@@ -47,7 +51,7 @@
         "days": "<span color='#ecc6d9'><b>{}</b></span>",
         "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
         "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-        "today": "<span color='#ff6699'><b><u>{}</u></b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
       },
     },
     "actions": {
@@ -55,14 +59,14 @@
       "on-click-forward": "tz_up",
       "on-click-backward": "tz_down",
       "on-scroll-up": "shift_down",
-      "on-scroll-down": "shift_up",
+      "on-scroll-down": "shift_up"
     },
-    "on-click": "sh ~/.config/rofi/applets/bin/powermenu.sh",
+    "on-click": "sh ~/.config/rofi/applets/bin/powermenu.sh"
   },
   "clock#time": {
     "interval": 1,
     "format": "{:%H:%M}",
-    "tooltip": false,
+    "tooltip": false
   },
   "keyboard-state": {
     "numlock": false,
@@ -70,8 +74,8 @@
     "format": "{icon}",
     "format-icons": {
       "unlocked": "",
-      "locked": "󰘶 Caps",
-    },
+      "locked": "󰘶 Caps"
+    }
   },
   "bluetooth": {
     "format": " {status}",
@@ -80,7 +84,7 @@
     "tooltip-format": "{controller_alias}\t{controller_address}",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-    "on-click": "blueman-manager",
+    "on-click": "blueman-manager"
   },
   "pulseaudio": {
     "format": "{icon} {volume:3}%",
@@ -95,27 +99,27 @@
       "car": "",
       "default": [
         ""
-      ],
+      ]
     },
     "scroll-step": 1,
     "on-click": "pavucontrol",
     "ignored-sinks": [
       "Easy Effects Sink"
-    ],
+    ]
   },
   "cpu": {
     "interval": 1,
     "format": "{icon} {usage:3}%", // Icon: microchip
     "states": {
       "warning": 20,
-      "critical": 50,
+      "critical": 50
     },
     "format-icons": [
       "󰄛",
       "",
       ""
     ],
-    "on-click": "kitty -1 btm",
+    "on-click": "kitty -1 btm"
   },
   "temperature": {
     "critical-threshold": 80,
@@ -129,29 +133,29 @@
       ""
     ],
     "tooltip": true,
-    "on-click": "kitty -1 btm",
+    "on-click": "kitty -1 btm"
   },
   "memory": {
     "interval": 1,
     "format": "󰍛 {percentage:3}%", // Icon: memory
     "states": {
       "warning": 20,
-      "critical": 50,
+      "critical": 50
     },
     "tooltip-format": "{used:0.1f}GiB / {total:0.1f}GiB",
-    "on-click": "kitty -1 btm",
+    "on-click": "kitty -1 btm"
   },
   "network": {
     "interval": 1,
     "format-wifi": "  {bandwidthTotalBytes:>12}", // Icon: wifi
     "format-ethernet": "󰀂 {bandwidthTotalBytes:>12}", // Icon: ethernet
     "format-disconnected": "󰯡 Disconnected",
-    "tooltip-format": "{ifname}: {ipaddr}",
+    "tooltip-format": "{ifname}: {ipaddr}"
     // "on-click": "nm-connection-",
   },
   "tray": {
     "icon-size": 21,
-    "spacing": 10,
+    "spacing": 10
   },
   "custom/notification": {
     "tooltip": false,
@@ -185,28 +189,43 @@
       "7": " DB",
       "8": " Sys",
       "9": " Fun",
-      "default": " Work",
-    },
-  },
-  "hyprland/submap": {
-    "format": " {}",
-    "tooltip": false,
+      "default": " Work"
+    }
   },
   "battery": {
-    "bat": "BAT0",
-    "interval": 60,
-    "states": {
-      "warning": 30,
-      "critical": 15
+    "format": "{icon} {capacity:3}%",
+    "format-icons": {
+      "charging": [
+        "󰢜",
+        "󰂆",
+        "󰂇",
+        "󰂈",
+        "󰢝",
+        "󰂉",
+        "󰢞",
+        "󰂊",
+        "󰂋",
+        "󰂅"
+      ],
+      "default": [
+        "󰁺",
+        "󰁻",
+        "󰁼",
+        "󰁽",
+        "󰁾",
+        "󰁿",
+        "󰂀",
+        "󰂁",
+        "󰂂",
+        "󰁹"
+      ]
     },
-    "format": "{capacity}% {icon}",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    "max-length": 25
+    "format-full": "Charged ",
+    "interval": 5,
+    "states": {
+      "warning": 20,
+      "critical": 10
+    },
+    "tooltip": true
   }
 }

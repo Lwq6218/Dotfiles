@@ -3,16 +3,21 @@ plugins = [
   "scratchpads",
   "lost_windows",
   "monitors",
+  "layout_center",
   "toggle_dpms",
   "magnify",
   "expose",
   "shift_monitors",
   "workspaces_follow_focus",
+  "fetch_client_menu" 
 ]
-
-[monitors.placement]
-"Acer".top_center_of = "Sony"
-
+[layout_center]
+margin = 60
+offset = [0, 30]
+next = "movefocus r"
+prev = "movefocus l"
+next2 = "movefocus d"
+prev2 = "movefocus u"
 [workspaces_follow_focus]
 max_workspaces = 9
 

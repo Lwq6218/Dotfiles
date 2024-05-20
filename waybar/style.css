@@ -63,6 +63,7 @@
 #pulseaudio,
 #temperature,
 #custom-notification,
+#custom-arch,
 #battery
 #submap,
 #custom-icon,
@@ -78,6 +79,9 @@
 /* -----------------------------------------------------------------------------
  * Module styles
  * -------------------------------------------------------------------------- */
+#custom-arch{
+  color: @blue;
+}
 #custom-notification{
   color: @base;
   background-color: @sapphire;
