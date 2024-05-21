@@ -25,9 +25,9 @@
     "tray",
     "bluetooth",
     "pulseaudio",
-    "network",
     "battery",
-    "custom/notification"
+    "network",
+    "custom/notification",
   ],
   // -------------------------------------------------------------------------
   // Modules
