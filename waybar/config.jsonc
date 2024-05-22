@@ -27,7 +27,7 @@
     "pulseaudio",
     "battery",
     "network",
-    "custom/notification",
+    "custom/notification"
   ],
   // -------------------------------------------------------------------------
   // Modules
