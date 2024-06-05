@@ -6,7 +6,7 @@ if vim.g.neovide then
   vim.o.guifont = "Maple Mono:h11"
   vim.g.neovide_refresh_rate = 120
   vim.g.neovide_scale_factor = 1.0
-  vim.g.neovide_remember_window_size = false
+  vim.g.neovide_remember_window_size = true
   vim.g.neovide_input_ime = true
   vim.g.neovide_no_idle = false
   vim.g.neovide_hide_mouse_when_typing = true
